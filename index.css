@@ -1,0 +1,362 @@
+html {
+    height: 100%;
+    
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: green; /* временно чтоб видеть global */
+    color: white;
+    height: 100%;
+    /overflow: hidden;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+h1, h2 {
+    font-family: 'Solomon Sans Black'; 
+    text-transform: uppercase;
+}
+
+button {
+    cursor: pointer;
+}
+
+input {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+.wrapper {
+    max-width: 1308px;
+    margin: 0 auto;
+}
+
+header {
+    font-family: 'Solomon Sans Normal';
+    position: absolute;
+    width: 100%;
+    padding-top: 23px;
+    text-align: center;
+    z-index: 9;
+}
+
+.logo {
+    float: left;
+}
+
+.phone {
+    float: right;
+    font-size: 20px;
+    line-height: 0px;
+}
+
+#phoneBtn {
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+    width: 164px;
+    border-radius: 10px;
+    height: 32px;
+    border: 2px solid white;
+}
+
+#phoneBtn:hover {
+    border-color: #ffa34c;
+    color: #ffa34c;
+}
+
+#menuBtn {
+    font-size: 16px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    display: inline-block;
+    height: 72px; /* потом переделаю */
+}
+
+#menuBtn:hover {
+    color: #ffa34c;
+}
+
+.menu-hamburg {
+    width: 22px;
+    height: 2px;
+    background-color: yellow;
+    margin: 0px auto;
+    margin-bottom: 10px;
+}
+
+.menu-hamburg::before {
+    content: "";
+    width: 22px;
+    height: 2px;
+    background-color: red;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.menu-hamburg::after {
+    content: "";
+    width: 22px;
+    height: 2px;
+    background-color: blue;
+    display: block;
+    margin-top: 3px;
+}
+
+#menuBtn:hover .menu-hamburg {
+    background-color: #ffa34c;
+}
+
+/* */
+
+.label-container {
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    z-index: 9;
+}
+
+.label-container label {
+    width: 16px;
+    height: 16px;
+    display: block;
+    background-color: transparent;
+    border-radius: 50%;
+    margin: 5px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-color: transparent;
+}
+
+.label-container label::before {
+    width: 10px;
+    height: 10px;
+    content: "";
+    background-color: white;
+    display: block;
+    margin: 2px auto;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+#card1:checked ~ .label-container label[for="card1"]::before,
+#card2:checked ~ .label-container label[for="card2"]::before,
+#card3:checked ~ .label-container label[for="card3"]::before,
+#card4:checked ~ .label-container label[for="card4"]::before{
+    background-color: #ffa34c; 
+} 
+
+#card1:checked ~ .label-container label[for="card1"],
+#card2:checked ~ .label-container label[for="card2"],
+#card3:checked ~ .label-container label[for="card3"],
+#card4:checked ~ .label-container label[for="card4"]{
+    border-color: #ffa34c;
+} 
+
+#card1:checked ~ .card-container {
+    transform: translateY(0%);
+}
+
+#card2:checked ~ .card-container {
+    transform: translateY(-25%);
+}
+
+/* */
+
+.arrow-container {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #e1d7d1;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    margin-left: -15px;
+    bottom: 45px;
+    box-sizing: border-box;
+    z-index: 9;
+}
+
+.arrow {
+    height: 18px;
+    width: 2px;
+    background-color: #e1d7d1;
+    margin: 0 auto;
+    margin-top: 3px;
+}
+
+.arrow::before {
+    width: 12px;
+    height: 2px;
+    content: "";
+    display: block;
+    background-color: #e1d7d1;
+    transform: translate(-1px, 14px) rotate(-45deg);
+}
+
+.arrow::after {
+    width: 12px;
+    height: 2px;
+    content: "";
+    display: block;
+    background-color: #e1d7d1;
+    transform: translate(-9px, 11px) rotate(45deg);
+}
+
+/* */
+
+.card-container {
+    width: 100%;
+    height: 400%; /* нужно 400% */
+    display: block;
+    box-sizing: border-box;
+}
+
+.card {
+    width: 100%;
+    height: 25%;
+}
+
+.treatment-container h1 {
+    text-transform: uppercase;
+    font-size: 72px;
+    line-height: 70px;
+}
+
+.treatment-container .wrapper {
+    padding-top: 220px;
+    padding-left: 60px;
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
+    font-family: 'Solomon Sans Normal';
+    font-size: 18px;
+}
+
+.titl {
+    font-family: 'Solomon Sans Book';
+    font-size: 30px;
+    line-height: 70px;
+}
+
+.title h1 {
+    font-size: 72px;
+    line-height: 70px;
+}
+
+.title h1 span {
+    font-size: 30px;
+    line-height: 70px;
+    /margin-bottom: -90px;
+}
+
+.title h1 span::after {
+    background-color: white;
+    margin-left: 46px;
+}
+
+
+.treatment-container {
+    background-image: url('images/treatment.png');
+    background-size: cover;
+}
+
+#treatmentBtn {
+    width: 187px;
+    height: 37px;
+    background-color: #47cae3;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 16.5px;
+    outline: none;
+}
+
+
+/* Navigate card */
+
+.navigate-container {
+    font-size: 0;
+}
+
+.part {
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    background-size: cover;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid red;
+}
+
+.spain {
+    background-image: url('images/treatment.png');
+    background-position: 66% 0;
+}
+
+.treatment {
+    background-image: url('images/treatment-part.png');
+}
+
+.program {
+    background-image: url('images/program.png');
+    background-position: 0 -60px
+    /*  изображение имеет не правильные прапорции, либо пустоты либо не целиком
+    background-size: contain;
+    background-repeat: no-repeat; */
+}
+
+.services {
+    background-image: url('images/services.png');
+}
+
+.part p {
+    font-size: 18px;
+    font-family: 'Solomon Sans Normal';
+    padding: 90px 40px;
+    margin: 0;
+}
+
+/* Title */
+
+.title {
+    display: inline-block;
+}
+
+.title h2 {
+    font-size: 48px;
+    /line-height: 70px;
+    margin: 0;
+}
+
+.title span {
+    font-size: 24px;
+    font-family: 'Solomon Sans Book';
+    text-transform: capitalize;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: -60px; /* костыль */
+}
+
+.title span::after {
+    content: "";
+    width: 10px;
+    height: 2px;
+    background-color: #ffa34c;
+    flex-grow: 1;
+    margin-left: 13px;
+    /*
+    display: inline-block;
+    vertical-align: middle; */
+}

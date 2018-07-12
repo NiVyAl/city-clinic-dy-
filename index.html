@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>City clinic</title>
+        <link href="index.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header>
+            <div class="wrapper clearfix">
+                <button id="menuBtn"><div class="menu-hamburg"></div>Меню</button>
+                
+                <img src="images/logo.png" width="156px" height="49px" class="logo">
+                
+                <div class="phone">
+                    <p>8 (861) 238-87-27</p>
+                    <button id="phoneBtn">Заказать звонок</button>
+                </div>
+            </div>
+        </header>
+
+        <input type="radio" name="toggle" id="card1" checked>
+        <input type="radio" name="toggle" id="card2">
+        <input type="radio" name="toggle" id="card3">
+        <input type="radio" name="toggle" id="card4">
+
+        <div class="label-container">
+            <label for="card1"></label>
+            <label for="card2"></label>
+            <label for="card3"></label>
+            <label for="card4"></label>
+        </div>
+
+        <label for="card2" class="arrow-container"><div class="arrow"></div></label>
+        
+        <div class="card-container"> <!-- этот блок с высотой 400% -->
+            
+            <div class="treatment-container card">
+                <div class="wrapper">
+                    <div class="title">
+                        <h1><span>лечение</span><br>в испании</h1>
+                    </div>
+                    <p>Испания является одним из центров медицинского туризма.</p>
+                    <button id="treatmentBtn">Узнать подробнее</button>
+                </div>
+            </div>
+            
+            <div class="navigate-container card">
+                <div class="spain part">
+                    <div class="title">
+                        <h2><span>Почему</span><br>Испания?</h2>
+                    </div>
+                    <p>Основные преимущества лечения именно в Испании</p>
+                </div>
+                <div class="treatment part">
+                    <div class="title">
+                        <h2><span>направление</span><br>лечения</h2>
+                    </div>
+                    <p>Направления лечения</p>
+                </div>
+                <div class="program part"></div>
+                <div class="services part"></div>            
+            </div>
+        </div>
+        
+    </body>
+</html>
