@@ -42,6 +42,7 @@ label {
 .wrapper {
     max-width: 1308px;
     margin: 0 auto;
+    position: relative;
 }
 
 header {
@@ -84,13 +85,16 @@ header .wrapper {
     color: #ffa34c;
 }
 
+
+/* Menu */
+
 #menuBtn {
     font-size: 16px;
     background-color: transparent;
     color: white;
     border: none;
-   / display: inline-block;
-    /height: 40px;
+    display: block;
+    outline: none;
 }
 
 #menuBtn:hover {
@@ -98,35 +102,42 @@ header .wrapper {
 }
 
 .menu-hamburg {
-    width: 32px;
+    width: 22px;
     height: 2px;
-    background-color: yellow;
-    margin: 0px auto;
-    margin-bottom: 10px;
+    background-color: white;
+    margin: 10px auto;
+    /margin-bottom: 10px;
+    position: relative;
 }
 
-.menu-hamburg::before {
+.menu-hamburg::before, .menu-hamburg::after {
     content: "";
     width: 22px;
     height: 2px;
-    background-color: red;
+    background-color: white;
     display: block;
+    position: absolute;
+    bottom: 5px;
 }
 
 .menu-hamburg::after {
-    content: "";
-    width: 22px;
-    height: 2px;
-    background-color: blue;
-    display: block;
-    margin-top: 3px;
+    top: 5px;
 }
 
 #menuBtn:hover .menu-hamburg {
     background-color: #ffa34c;
 }
 
+#menuBtn:hover .menu-hamburg::after {
+    background-color: #ffa34c;
+}
+
+#menuBtn:hover .menu-hamburg::before {
+    background-color: #ffa34c;
+}
+
 /* */
+
 
 .label-container {
     position: absolute;
@@ -232,6 +243,31 @@ header .wrapper {
 
 /* */
 
+/* Next */
+
+.next {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #e1d7d1;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+}
+
+.next-left {
+    left: 0; 
+    transform: rotate(58deg) skewX(30deg);
+}
+
+.next-right {
+    right: 0;
+    transform: rotate(240deg) skewX(30deg);
+}
+
+/* */
+
 .card-container {
     width: 100%;
     height: 400%; /* нужно 400% */
@@ -265,11 +301,11 @@ header .wrapper {
     background-image: url('images/treatment.png');
     background-size: cover;
     padding-top: 100px; /* отступ для header в соответствии с макетом */
-    
+   /* 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: stretch; 
+    align-items: stretch; */
 }
 
 .treatment-container p {
@@ -359,7 +395,8 @@ header .wrapper {
     height: 2px;
     background-color: #ffa34c;
     flex-grow: 1;
-    margin-left: 13px;
+    /margin-left: 13px;
+    margin: 0 1.5%;
 }
 
 h1 span::after {
