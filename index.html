@@ -44,7 +44,7 @@
                     
                     <h1 class="title"><span>лечение</span><br>в испании</h1>
                     <p>Испания является одним из центров медицинского туризма.</p>
-                    <button id="treatmentBtn">Узнать подробнее</button>
+                    <button id="treatmentBtn" class="blue-btn">Узнать подробнее</button>
                     
                     <label class="next next-right"></label>
                 </div>
@@ -97,19 +97,20 @@
             <div class="sign-up-container card">
                 <div class="wrapper">
                     <form>
-                        <div class="input-container">
-                            <h2 class="title"><span>записаться</span>на консультация</h2>
+                        
+                        <h2 class="title"><span>записаться</span>на консультация</h2>
+                        <div class="text-container">
                             <p>Подайте заявку на получение консультации</p>
                             <p>Наш менеджер свяжется с вами и обсудит все детали лечения за рубежом</p>
                         </div>
                         
                         <div class="input-container">
-                            <input type="text" id="name">
+                            <input type="text" id="name" required>
                             <label for="name">Ваше имя</label>
                         </div>
                         
                         <div class="input-container">
-                            <input type="text" id="phone">
+                            <input type="tel" id="phone" name="phone" required minlength="11" maxlength="11">
                             <label for="phone">Ваш телефон</label>
                         </div>
                         
@@ -118,7 +119,7 @@
                             <label for="commentary">Ваш комментарий</label>
                         </div>
                         
-                        <input type="submit" value="Отправить заявку" class="form-btn">
+                        <input type="submit" value="Отправить заявку" class="blue-btn">
                     </form>
                     
                     <footer>

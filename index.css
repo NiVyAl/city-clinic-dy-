@@ -29,7 +29,7 @@ h1 {
 
 h2 {
     font-size: 48px;
-    line-height: 20px;
+    line-height: 40px; /* было 20, но работал ток у 2 карточки */
 }
 
 button {
@@ -321,6 +321,10 @@ header .wrapper {
 #treatmentBtn {
     width: 187px;
     height: 37px;
+    
+}
+
+.blue-btn {
     background-color: #47cae3;
     font-size: 16px;
     color: white;
@@ -369,15 +373,6 @@ header .wrapper {
     background-image: url('images/services.png');
 }
 
-/* костыли */
-.part p {
-    /margin-top: 75%;
-}
-
-.part .title {
-    /margin-top: 80%;
-}
-/* */
 
 /* Title */
 
@@ -522,6 +517,7 @@ h1 span {
 .sign-up-container {
     background-image: url('images/sign-up.png');
     background-size: cover;
+    font-size: 16px;
 }
 
 .sign-up-container form {
@@ -529,15 +525,9 @@ h1 span {
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
-}
-
-footer {
-    display: flex;
-    justify-content: space-between
-}
-
-footer p:last-child {
-    text-align: right;
+    border: 1px solid red;
+    justify-content: space-around;
+    text-align: center;
 }
 
 .sign-up-container .wrapper {
@@ -548,6 +538,10 @@ footer p:last-child {
     box-sizing: border-box;
 }
 
+.input-container p:first-child {
+    font-weight: bold; /* font-family опять не подключался */
+}
+
 .sign-up-container .title span::before {
     content: "";
     width: 10px;
@@ -555,4 +549,49 @@ footer p:last-child {
     background-color: #ffa34c;
     flex-grow: 1;
     margin: 0 1.5%;
+}
+
+input[type="submit"] {
+    /padding: 18px 70px;
+    cursor: pointer;
+    width: 276px;
+    height: 40px;
+}
+
+.input-container input {
+    width: 340px;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 16px;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container label {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    cursor: auto;
+    transition: 0.5s ease all;
+}
+
+.input-container input:focus ~ label {
+    top: -26px;
+    font-size: 14px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between
+}
+
+footer p:last-child {
+    text-align: right;
 }
