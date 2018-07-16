@@ -9,3 +9,14 @@ var arrow = function(num) {
         arrowContainer.htmlFor = 'card' + num;    
     }
 }
+
+
+var treatmentSlide = document.querySelectorAll('.treatment-slide');
+var treatmentContainer = document.querySelector('.treatment-container');
+
+var next = function(direction) {
+    console.log('next function');
+    if (direction) {
+        treatmentContainer.style.transform = 'translateX(50%)';
+    }
+}

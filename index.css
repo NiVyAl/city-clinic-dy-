@@ -222,12 +222,19 @@ header .wrapper {
     transition: 0.5s ease all;
 }
 
+.last-card::after { /* не нужно */
+    width: 40px;
+    height: 80px;
+    background-color: #47cae3;
+}
+
 .arrow {
     height: 18px;
     width: 2px;
     background-color: #e1d7d1;
     margin: 0 auto;
     margin-top: 3px;
+    z-index: 8;
 }
 
 .arrow::before {
@@ -273,6 +280,23 @@ header .wrapper {
     transform: rotate(240deg) skewX(30deg);
 }
 
+.wr-next {
+    border: 1px solid red;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    z-index: 9;
+}
+
+#photo1:checked ~ .treatment-container {
+    transform: translateX(0);
+} 
+
+#photo2:checked ~ .treatment-container {
+    transform: translateX(-50%);
+} 
+
+
 /* */
 
 .card-container {
@@ -281,6 +305,7 @@ header .wrapper {
     display: block;
     box-sizing: border-box;
     transition: 0.5s ease all;
+    overflow: hidden
 }
 
 .card {
@@ -290,15 +315,24 @@ header .wrapper {
 }
 
 .treatment-container {
+    width: 200%;
+    display: block;
+    transition: 0.5s ease all;
+}
+
+.treatment-slide {
     background-image: url('images/treatment.png');
-    background-size: cover;
-    /padding-top: 100px; /* отступ для header в соответствии с макетом */
-    padding-top: 8%;
+    background-size: cover;                                               
+    padding-top: 4%; /* отступ для header в соответствии с макетом */
+    height: 100%;
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
     
     display: flex; /* для центровки */
 }
 
-.treatment-container .wrapper {
+.treatment-slide .wrapper {
     padding-left: 60px;
     box-sizing: border-box;
     display: block;
@@ -333,6 +367,10 @@ header .wrapper {
     outline: none;
 }
 
+.blue-btn:hover {
+    background-color: #00a5c5;
+}
+
 
 /* Navigate card */
 
@@ -349,6 +387,13 @@ header .wrapper {
     text-decoration: none;
     float: left;
     padding-top: 8%; /* отступ для header в соответствии с макетом */
+    
+    transition: 0.5s ease all;
+}
+
+.part:hover {
+    /background-size: 110% 110%; /* переделаю */
+    /background-position: 50% 50%;
 }
 
 .spain {
@@ -358,19 +403,23 @@ header .wrapper {
 
 .treatment {
     background-image: url('images/treatment-part.png');
-    background-position: 0 -60px
+    /background-position: 0 -60px
+}
+
+.treatment:hover {
+    background-image: url('images/treatment-part-hover.png');
 }
 
 .program {
     background-image: url('images/program.png');
-    background-position: 0 -60px
-    /*  изображение имеет не правильные прапорции, либо пустоты либо не целиком
-    background-size: contain;
-    background-repeat: no-repeat; */
+    
+    background-size: 100% 100%; /* так красивее */
 }
 
 .services {
     background-image: url('images/services.png');
+    
+    background-size: 100% 100%; /* так красивее */
 }
 
 
@@ -525,7 +574,6 @@ h1 span {
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
-    border: 1px solid red;
     justify-content: space-around;
     text-align: center;
 }
@@ -583,7 +631,7 @@ input[type="submit"] {
 }
 
 .input-container input:focus ~ label {
-    top: -26px;
+    top: -20px;
     font-size: 14px;
 }
 
