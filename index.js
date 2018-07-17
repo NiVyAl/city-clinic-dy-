@@ -20,3 +20,19 @@ var next = function(direction) {
         treatmentContainer.style.transform = 'translateX(50%)';
     }
 }
+
+var menuBtn = document.getElementById('menuBtn');
+var menuAction = document.querySelector('.menu-action');
+var isActive = false;
+
+var menuActive = function() {
+    if (isActive) {
+        menuAction.classList.add('none');
+        menuBtn.classList.remove('menu-active');
+        isActive = false;
+    } else {
+        menuAction.classList.remove('none');
+        menuBtn.classList.add('menu-active');
+        isActive = true;
+    }
+};

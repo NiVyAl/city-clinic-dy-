@@ -13,7 +13,7 @@
                     <img src="images/logo.png" width="156px" height="49px">
                 </a>
                 
-                <button id="menuBtn"><div class="menu-hamburg"></div>Меню</button>
+                <button id="menuBtn" onclick="menuActive()"><div class="menu-hamburg"></div>Меню</button>
                 
                 <div class="phone">
                     <p>8 (861) 238-87-27</p>
@@ -21,6 +21,14 @@
                 </div>
             </div>
         </header>
+        
+        <div class="menu-action none">
+            <a href="#"><h2 class="title"><span>Лечение</span><br>в Испания</h2></a>
+            <a href="#"><h2 class="title"><span>Наши</span><br>программы</h2></a>
+            <a href="#"><h2 class="title"><span>Медицинские</span><br>услуги</h2></a>
+            <a href="#"><h2 class="title"><span>О нашей</span><br>компании</h2></a>
+            <a href="#"><h2 class="title"><span>Наши</span><br>контакты</h2></a>
+        </div>
 
         <input type="radio" name="toggle" id="card1" onclick="arrow(1)" checked>
         <input type="radio" name="toggle" id="card2" onclick="arrow(2)">
@@ -35,6 +43,7 @@
         </div>
 
         <label class="arrow-container" for="card2"><div class="arrow"></div></label>
+        
         
         <div class="card-container"> <!-- этот блок с высотой 400% -->
             
