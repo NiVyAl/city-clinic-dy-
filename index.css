@@ -8,7 +8,7 @@ body {
     background-color: green; /* временно чтоб видеть global */
     color: white;
     height: 100%;
-    /overflow: hidden;
+    overflow: hidden;
     font-family: 'Solomon Sans Normal';
 }
 
@@ -420,6 +420,7 @@ h1 span {
     width: 100%;
     height: 25%;
     box-sizing: border-box;
+    position: relative;
 }
 
 .treatment-container {
@@ -501,6 +502,8 @@ h1 span {
     align-items: center;
     justify-content: space-between;
     transition: 0.5s ease all;
+    
+    position: relative;
 }
 
 .part .title {
@@ -722,4 +725,45 @@ footer {
 
 footer p:last-child {
     text-align: right;
+}
+
+
+/* */
+
+.card::before, .part::before {
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+}
+
+.navigate-container::before {
+    content: none;
+}
+
+.treatment-container::before {
+    background-color: #3a1e04;
+    opacity: 0.1;
+}
+
+.advantage-container::before {
+    background-color: black;
+    opacity: 0.2;
+}
+
+.sign-up-container::before {
+    background-color: black;
+    opacity: 0.25;
+}
+
+
+.part::before {
+    background-color: black;
+    opacity: 0.3;
+}
+
+.part h2, .part p {
+    z-index: 2;
 }

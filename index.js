@@ -21,6 +21,7 @@ var next = function(direction) {
     }
 }
 
+
 var menuBtn = document.getElementById('menuBtn');
 var menuAction = document.querySelector('.menu-action');
 var menuText = document.querySelector('.menu-text');
