@@ -13,21 +13,51 @@
                     <img src="images/logo.png" width="156px" height="49px">
                 </a>
                 
-                <button id="menuBtn" onclick="menuActive()"><div class="menu-hamburg"></div>Меню</button>
+                <button id="menuBtn" onclick="menuActive()"><div class="menu-hamburg"></div><p class="menu-text">Меню</p></button>
                 
                 <div class="phone">
                     <p>8 (861) 238-87-27</p>
-                    <button id="phoneBtn">Заказать звонок</button>
+                    <button id="phoneBtn" onclick="phoneActive()">Заказать звонок</button>
                 </div>
             </div>
         </header>
         
-        <div class="menu-action none">
+        <div class="menu-action action none">
             <a href="#"><h2 class="title"><span>Лечение</span><br>в Испания</h2></a>
             <a href="#"><h2 class="title"><span>Наши</span><br>программы</h2></a>
             <a href="#"><h2 class="title"><span>Медицинские</span><br>услуги</h2></a>
             <a href="#"><h2 class="title"><span>О нашей</span><br>компании</h2></a>
             <a href="#"><h2 class="title"><span>Наши</span><br>контакты</h2></a>
+        </div>
+        
+        <div class="sign-up-container phone-action action none">
+            <div class="wrapper">
+                <form>
+
+                    <h2 class="title"><span>заказать</span>звонок</h2>
+                    <div class="text-container">
+                        <p>Подайте заявку на заказ звонка</p>
+                        <p>Наш менеджер скоро свяжется с Вами и ответит на Ваши вопросы</p>
+                    </div>
+
+                    <div class="input-container">
+                        <input type="text" id="name-phone" required>
+                        <label for="name-phone">Ваше имя</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input type="tel" id="phone-phone" name="phone" required minlength="11" maxlength="11">
+                        <label for="phone-phone">Ваш телефон</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input type="text-phone" id="commentary-phone">
+                        <label for="commentary-phone">Ваш комментарий</label>
+                    </div>
+
+                    <input type="submit" value="Заказать звонок" class="blue-btn">
+                </form>
+            </div>
         </div>
 
         <input type="radio" name="toggle" id="card1" onclick="arrow(1)" checked>

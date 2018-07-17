@@ -23,16 +23,41 @@ var next = function(direction) {
 
 var menuBtn = document.getElementById('menuBtn');
 var menuAction = document.querySelector('.menu-action');
-var isActive = false;
+var menuText = document.querySelector('.menu-text');
+var isActiveMenu = false;
 
 var menuActive = function() {
-    if (isActive) {
-        menuAction.classList.add('none');
-        menuBtn.classList.remove('menu-active');
-        isActive = false;
+    if (isActivePhone == false) {
+        if (isActiveMenu) {
+            menuAction.classList.add('none');
+            menuText.innerHTML = 'Меню';
+            menuBtn.classList.remove('menu-active');
+            isActiveMenu = false;
+        } else {
+            menuAction.classList.remove('none');
+            menuText.innerHTML = 'закрыть Меню';
+            menuBtn.classList.add('menu-active');
+            isActiveMenu = true;
+        }    
     } else {
-        menuAction.classList.remove('none');
-        menuBtn.classList.add('menu-active');
-        isActive = true;
-    }
+        phoneAction.classList.add('none');
+        menuText.innerHTML = 'Меню';
+        menuBtn.classList.remove('menu-active');
+        phoneContainer.style.opacity = 1;
+        isActivePhone = false;
+    };
 };
+
+var phoneAction = document.querySelector('.phone-action');
+var isActivePhone = false;
+var phoneContainer = document.querySelector('.phone');
+
+var phoneActive = function() {
+    if (isActivePhone == false) {
+        phoneAction.classList.remove('none');
+        menuText.innerHTML = 'закрыть форму';
+        menuBtn.classList.add('menu-active');
+        phoneContainer.style.opacity = 0;
+        isActivePhone = true;
+    }
+}
