@@ -19,13 +19,24 @@ var arrow = function(num) {
 
 var treatmentSlide = document.querySelectorAll('.treatment-slide');
 var treatmentContainer = document.querySelector('.treatment-container');
+var position = 0;
+
+treatmentContainer.style.width = treatmentSlide.length * 100 + '%';
+for (var i=0; i < treatmentSlide.length; i++) {
+    treatmentSlide[i].style.width = 100 / treatmentSlide.length + '%';
+    treatmentSlide[i].style.paddingTop = 4/treatmentSlide.length + '%';
+}
 
 var next = function(direction) {
-    if (direction == 'f') {
-        treatmentContainer.style.transform = 'translateX(-50%)';
+    if (direction == 'f' && position > (100/treatmentSlide.length - 100)) {
+        position = position - 100/treatmentSlide.length;
+        console.log(position);
+        treatmentContainer.style.transform = 'translateX(' + position + '%)' ;
     };
-    if (direction == 'b'){
-        treatmentContainer.style.transform = 'translateX(0%)';
+    if (direction == 'b' && position < 0){
+        position = position + 100/treatmentSlide.length;
+        console.log(position);
+        treatmentContainer.style.transform = 'translateX(' + position + '%)';
     };
 }
 
