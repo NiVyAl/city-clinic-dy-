@@ -101,8 +101,7 @@ header .wrapper {
     display: block;
     outline: none;
     text-transform: uppercase;
-    
-    /border: 1px solid red;
+    height: 40px;
 }
 
 #menuBtn:hover {
@@ -634,6 +633,8 @@ h1 span {
     
     margin: auto;
     flex-grow: 1;
+    
+    padding-right: 5%;
 }
 
 .advantage:hover {
