@@ -279,24 +279,27 @@ header .wrapper {
 /* */
 
 .arrow-container {
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+    bottom: 0;
+    z-index: 7;
+    transition: 0.25s ease all;
+    width: 40px;
+    font-size: 16px;
+}
+
+.around-arrow {
     width: 30px;
     height: 30px;
     border: 2px solid #e1d7d1;
-    position: absolute;
     border-radius: 50%;
-    left: 50%;
-    margin-left: -15px;
-    bottom: 45px;
     box-sizing: border-box;
-    z-index: 7;
-    
-    transition: 0.5s ease all;
-}
-
-.last-card::after { /* не нужно */
-    width: 40px;
-    height: 80px;
-    background-color: #47cae3;
+    position: absolute;
+    right: 50%;
+    margin-right: -15px;
+    bottom: 45px;
+    transition: 0.25s ease all;
 }
 
 .arrow {
@@ -326,7 +329,41 @@ header .wrapper {
     transform: translate(-9px, 11px) rotate(45deg);
 }
 
+
+.last-arrow {
+    background-color: #47cae3; 
+    bottom: 0;
+    height: 85px;
+    border-radius: 15px 15px 0 0;
+}
+
+.last-arrow .arrow, .last-arrow .arrow::before, .last-arrow .arrow::after {
+    background-color: white;
+} 
+
+.last-arrow .around-arrow {
+    border-color: white;
+}
+
+.last-arrow::before {
+    white-space: pre;
+    text-align: center;
+    content: 'Записаться \A на консультацию';
+    position: absolute;
+    display: inline-block;
+    top: -50px;
+    right: -46px;
+}
+
+.last-arrow:hover {
+    height: 105px;
+}
+
+.last-arrow:hover .around-arrow {
+    bottom: 65px;
+}
 /* */
+
 
 /* Next */
 
@@ -352,12 +389,18 @@ header .wrapper {
 }
 
 .wr-next {
-    border: 1px solid red;
+    /border: 1px solid red;
+    display: block;
     position: absolute;
-    height: 100px;
-    width: 100px;
+    /height: 100px;
+    width: 100%;
     z-index: 9;
+    
+    top: 13%;
+    right: 1%;
+    left: 1%;
 }
+
 
 #photo1:checked ~ .treatment-container {
     transform: translateX(0);
@@ -513,11 +556,19 @@ h1 span {
 .part:hover {
     /background-size: 110% 110%; /* переделаю */
     /background-position: 50% 50%;
+    
+    /transform: scale(1.2);
 }
 
 .spain {
     background-image: url('images/treatment.png');
     background-position: 66% 0;
+    
+}
+
+.spain:hover {
+    /background-position: 66% 0;
+    /background-size: 342% 100%;  
 }
 
 .treatment {
@@ -713,7 +764,7 @@ input[type="submit"] {
     transition: 0.5s ease all;
 }
 
-.input-container input:focus ~ label {
+.input-container input:focus ~ label, .input-container input:valid ~ label {
     top: -20px;
     font-size: 14px;
 }

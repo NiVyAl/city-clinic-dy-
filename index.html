@@ -47,12 +47,12 @@
                     </div>
 
                     <div class="input-container">
-                        <input type="tel" id="phone-phone" name="phone" required minlength="11" maxlength="11">
+                        <input type="tel" id="phone-phone" name="phone" required pattern="[0-9]{11}">
                         <label for="phone-phone">Ваш телефон</label>
                     </div>
 
                     <div class="input-container">
-                        <input type="text-phone" id="commentary-phone">
+                        <input type="text" id="commentary-phone" required>
                         <label for="commentary-phone">Ваш комментарий</label>
                     </div>
 
@@ -74,18 +74,18 @@
             <label for="card4"></label>
         </div>
 
-        <label class="arrow-container" for="card2"><div class="arrow"></div></label>
+        <label class="arrow-container" for="card2"><div class="around-arrow"><div class="arrow"></div></div></label>
         
         
         
         <div class="card-container"> <!-- этот блок с высотой 400% -->
             
+            <div class="wrapper wr-next">
+                <div class="next next-left" onclick="next('b')"></div>
+                <div class="next next-right" onclick="next('f')"></div>
+            </div>
+            
             <div class="treatment-container card">
-                
-                <div class="wrapper wr-next">
-                    <div class="next next-left" onclick="next(0)"></div>
-                    <div class="next next-right" onclick="next(1)"></div>
-                </div>
                 
                 <div class="treatment-slide photo1">
                     <div class="wrapper">
@@ -166,12 +166,12 @@
                         </div>
                         
                         <div class="input-container">
-                            <input type="tel" id="phone" name="phone" required minlength="11" maxlength="11">
+                            <input type="text" id="phone" name="phone" required pattern="[0-9]{11}">
                             <label for="phone">Ваш телефон</label>
                         </div>
                         
                         <div class="input-container">
-                            <input type="text" id="commentary">
+                            <input type="text" id="commentary" required>
                             <label for="commentary">Ваш комментарий</label>
                         </div>
                         
