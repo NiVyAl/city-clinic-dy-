@@ -24,6 +24,7 @@ var arrow = function(num) { // num - номер инпута который ее
 
 // слайдер на первом экране
 
+
 var treatmentSlide = document.querySelectorAll('.treatment-slide'); // находим все слайды
 var treatmentContainer = document.querySelector('.treatment-container'); // находим экран Treatment in Spain
 var position = 0; // изначальная позиция по X у экрана Treatment in Spain

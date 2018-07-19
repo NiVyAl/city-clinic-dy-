@@ -682,6 +682,8 @@ h1 span {
     
     margin: auto;
     flex-grow: 1;
+    
+    padding-right: 5%;
 }
 
 .advantage:hover {
