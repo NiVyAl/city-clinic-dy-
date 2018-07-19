@@ -1,3 +1,23 @@
+@font-face {
+    font-family: 'Solomon Sans Normal';
+    src: url('fonts/Solomon Sans Normal.otf');
+}
+
+@font-face {
+    font-family: 'Solomon Sans Book';
+    src: url('fonts/Solomon Sans Book.otf');
+}
+
+@font-face {
+    font-family: 'Solomon Sans Black';
+    src: url('fonts/Solomon Sans Black.otf');
+}
+
+@font-face {
+    font-family: 'Solomon Sans Bold';
+    src: url('fonts/Solomon Sans Bold.otf');
+}
+
 html {
     height: 100%;
 }
@@ -5,7 +25,7 @@ html {
 body {
     padding: 0;
     margin: 0;
-    background-color: green; /* временно чтоб видеть global */
+    background-color: green;
     color: white;
     height: 100%;
     overflow: hidden;
@@ -29,7 +49,7 @@ h1 {
 
 h2 {
     font-size: 48px;
-    line-height: 40px; /* было 20, но работал ток у 2 карточки */
+    line-height: 40px;
 }
 
 button {
@@ -49,6 +69,10 @@ label {
     margin: 0 auto;
     position: relative;
 }
+
+
+
+/* Header */
 
 header {
     font-family: 'Solomon Sans Normal';
@@ -89,6 +113,7 @@ header .wrapper {
     border-color: #ffa34c;
     color: #ffa34c;
 }
+
 
 
 /* Menu */
@@ -277,6 +302,10 @@ header .wrapper {
 
 /* */
 
+
+
+/* Next Page */
+
 .arrow-container {
     position: absolute;
     left: 50%;
@@ -291,7 +320,7 @@ header .wrapper {
 .around-arrow {
     width: 30px;
     height: 30px;
-    border: 2px solid #e1d7d1;
+    border: 2px solid white;
     border-radius: 50%;
     box-sizing: border-box;
     position: absolute;
@@ -299,12 +328,28 @@ header .wrapper {
     margin-right: -15px;
     bottom: 45px;
     transition: 0.25s ease all;
+    
+    border-left-color: transparent;
+}
+
+.around-arrow::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    border-left-color: transparent;
+    transform: rotate(50deg);
 }
 
 .arrow {
     height: 18px;
     width: 2px;
-    background-color: #e1d7d1;
+    background-color: white;
     margin: 0 auto;
     margin-top: 3px;
     z-index: 8;
@@ -315,7 +360,7 @@ header .wrapper {
     height: 2px;
     content: "";
     display: block;
-    background-color: #e1d7d1;
+    background-color: white;
     transform: translate(-1px, 13px) rotate(-45deg);
 }
 
@@ -324,7 +369,7 @@ header .wrapper {
     height: 2px;
     content: "";
     display: block;
-    background-color: #e1d7d1;
+    background-color: white;
     transform: translate(-9px, 11px) rotate(45deg);
 }
 
@@ -336,13 +381,6 @@ header .wrapper {
     border-radius: 15px 15px 0 0;
 }
 
-.last-arrow .arrow, .last-arrow .arrow::before, .last-arrow .arrow::after {
-    background-color: white;
-} 
-
-.last-arrow .around-arrow {
-    border-color: white;
-}
 
 .last-arrow::before {
     white-space: pre;
@@ -364,7 +402,8 @@ header .wrapper {
 /* */
 
 
-/* Next */
+
+/* Кнопки слайдера первого экрана */
 
 .next {
     width: 40px;
@@ -388,29 +427,19 @@ header .wrapper {
 }
 
 .wr-next {
-    /border: 1px solid red;
     display: block;
     position: absolute;
-    /height: 100px;
     width: 100%;
     z-index: 9;
     
-    top: 13%;
+    top: 12%;
     right: 1%;
     left: 1%;
 }
 
 
-#photo1:checked ~ .treatment-container {
-    transform: translateX(0);
-} 
 
-#photo2:checked ~ .treatment-container {
-    transform: translateX(-50%);
-} 
-
-
-/* Title */
+/* Title (заголовок у всех экранов) */
 
 .title {
     margin: 0;
@@ -445,38 +474,41 @@ h1 span {
     font-size: 30px !important;
 }
 
-
-
 /* */
+
+
+
+/* Полноэкранный скролл */
 
 .card-container {
     width: 100%;
-    height: 400%; /* нужно 400% */
+    height: 400%;
     display: block;
     box-sizing: border-box;
     transition: 0.5s ease all;
     overflow: hidden
 }
 
-.card {
+.card {             /* стиль для всех экраннов */
     width: 100%;
     height: 25%;
     box-sizing: border-box;
     position: relative;
 }
 
+/* */
+
+
+/* Treatment in Spain */
+
 .treatment-container {
-    width: 200%;
     display: block;
     transition: 0.5s ease all;
 }
 
 .treatment-slide {
-    background-image: url('images/treatment.png');
     background-size: cover;                                               
-    padding-top: 4%; /* отступ для header в соответствии с макетом */
     height: 100%;
-    width: 50%;
     float: left;
     box-sizing: border-box;
     
@@ -492,10 +524,6 @@ h1 span {
     
     margin: auto; /* для центровки */
     flex-grow: 1;
-    /*
-    display: flex;
-    flex-direction: column;
-    justify-content: center; */
 }
 
 
@@ -522,6 +550,23 @@ h1 span {
     background-color: #00a5c5;
 }
 
+.photo1 {
+    background-image: url('images/treatment.png');
+}
+
+.photo2 {
+    background-image: url('images/advantages.png');
+}
+
+.photo3 {
+    background-image: url('images/treatment.png');
+}
+
+.photo4 {
+    background-image: url('images/treatment.png');
+}
+
+
 
 /* Navigate card */
 
@@ -530,7 +575,6 @@ h1 span {
     height: 100%;
     display: block;
     box-sizing: border-box;
-    background-size: cover;
     text-align: center;
     font-size: 18px;
     font-family: 'Solomon Sans Normal';
@@ -543,53 +587,58 @@ h1 span {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    transition: 0.5s ease all;
     
     position: relative;
+    overflow: hidden
 }
 
 .part .title {
     line-height: 20px; /* костыль */
 }
 
-.part:hover {
-    /background-size: 110% 110%; /* переделаю */
-    /background-position: 50% 50%;
-    
-    /transform: scale(1.2);
+
+.part::before {
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    background-size: cover;
+    transition: 0.5s ease all;
 }
 
-.spain {
+.part:hover::before {
+    transform: scale(1.2);
+}
+
+
+.spain::before {
     background-image: url('images/treatment.png');
     background-position: 66% 0;
     
 }
 
-.spain:hover {
-    /background-position: 66% 0;
-    /background-size: 342% 100%;  
-}
-
-.treatment {
+.treatment::before {
     background-image: url('images/treatment-part.png');
-    /background-position: 0 -60px
 }
 
-.treatment:hover {
+.treatment:hover::before {
     background-image: url('images/treatment-part-hover.png');
 }
 
-.program {
+.program::before {
     background-image: url('images/program.png');
     
     background-size: 100% 100%; /* так красивее */
 }
 
-.services {
+.services::before {
     background-image: url('images/services.png');
     
     background-size: 100% 100%; /* так красивее */
 }
+
 
 
 /* Advantages */
@@ -601,7 +650,7 @@ h1 span {
 .advantage-container {
     background-image: url('images/advantages.png');
     background-size: cover;
-    padding-top: %; /* отступ для header в соответствии с макетом */
+    padding-top: 4%; /* отступ для header в соответствии с макетом */
     
     display: flex;
 }
@@ -673,7 +722,7 @@ h1 span {
 
 .active .advantage-title {
     font-size: 24px;
-    /*font-family: 'Solomon Sans Bold';  почему-то не грузиться */
+    font-family: 'Solomon Sans Bold';
     margin-top: 1px;    /* костыль чтоб текст был по центру */
 }
 
@@ -694,6 +743,7 @@ h1 span {
     flex-direction: row-reverse;
     text-transform: none; /* там два слова и чтоб оба не были с заглавной */
 }
+
 
 
 /* sign up container */
@@ -735,7 +785,6 @@ h1 span {
 }
 
 input[type="submit"] {
-    /padding: 18px 70px;
     cursor: pointer;
     width: 276px;
     height: 40px;
@@ -779,10 +828,13 @@ footer p:last-child {
     text-align: right;
 }
 
-
 /* */
 
-.card::before, .part::before {
+
+
+/* фильтр для фона */
+
+.card::before, .part::after {
     width: 100%;
     height: 100%;
     content: "";
@@ -811,7 +863,7 @@ footer p:last-child {
 }
 
 
-.part::before {
+.part::after {
     background-color: black;
     opacity: 0.3;
 }
